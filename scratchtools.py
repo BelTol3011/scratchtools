@@ -156,20 +156,20 @@ import random
 import time
 
 
-import my_scratch
+import my_sketch
 
 null = [0, 0]
 
 root.geometry("600x600")
 
 try:
-    my_scratch.setup()
+    my_sketch.setup()
 except AttributeError:
     print("No setup")
 
 try:
     while 1:
-        my_scratch.draw()
+        my_sketch.draw()
         if windowdestroyd() == 0:
 
             try:
