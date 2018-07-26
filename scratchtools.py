@@ -42,12 +42,11 @@ def translate(x, y):
     # print("null is now:", x, y)
 
 
-def cText(x, y, text, font):
-    global elements
+def Text(x, y, text, font=("Arial", 20)):
+
     try:
-        num = canvas.create_text(null[0] + x, null[1] + y, text=text, font=font)
-        elements.append(num)
-        return num
+
+        return canvas.create_text(null[0] + x, null[1] + y, text=text, font=font)
     except TclError:
         exit()
 
