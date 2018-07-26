@@ -12,11 +12,24 @@ def size(width, height):
     global WIDTH
     global HEIGHT
     root.geometry(str(width) + "x" + str(height))
-    canvas.pack_forget()
+    canvas.place_forget()
     canvas.place(x=0, y=0, width=width, height=height)
     WIDTH = width
     HEIGHT = height
     # print("geometry is now:", HEIGHT, WIDTH)
+
+def clear():
+    global WIDTH
+    global HEIGHT
+
+
+    canvas.place_forget()
+    canvas.place(x=0, y=0, width=WIDTH, height=HEIGHT)
+
+
+    # print("geometry is now:", HEIGHT, WIDTH)
+
+
 
 
 def background(color):
@@ -154,8 +167,6 @@ def map(fst, snd, trd, fth):
 
 import random
 import time
-
-
 import my_sketch
 
 null = [0, 0]
