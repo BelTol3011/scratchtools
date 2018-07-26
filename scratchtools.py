@@ -55,11 +55,11 @@ def translate(x, y):
     # print("null is now:", x, y)
 
 
-def Text(x, y, text, font=("Arial", 20)):
+def Text(x, y, text, font=("Arial", 20), fill="black"):
 
     try:
 
-        return canvas.create_text(null[0] + x, null[1] + y, text=text, font=font)
+        return canvas.create_text(null[0] + x, null[1] + y, text=text, font=font, fill="black")
     except TclError:
         exit()
 
