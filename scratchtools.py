@@ -61,7 +61,7 @@ def Text(x, y, text, font=("Arial", 20), fill="black"):
 
     try:
 
-        return canvas.create_text(null[0] + x, null[1] + y, text=text, font=font, fill="black")
+        return canvas.create_text(null[0] + x, null[1] + y, text=text, font=font, fill=fill)
     except TclError:
         exit()
 
