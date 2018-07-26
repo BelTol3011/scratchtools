@@ -57,6 +57,8 @@ def translate(x, y):
 
 def Text(x, y, text, font=("Arial", 20), fill="black"):
 
+    fill = mIntToColor(fill)
+
     try:
 
         return canvas.create_text(null[0] + x, null[1] + y, text=text, font=font, fill="black")
