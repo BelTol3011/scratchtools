@@ -1,6 +1,7 @@
 WIDTH = 600
 HEIGHT = 600
 from tkinter import *
+
 root = Tk()
 canvas = Canvas(master=root, highlightthickness=0)
 canvas.place(x=0, y=0, width=WIDTH, height=HEIGHT)
@@ -18,27 +19,26 @@ def size(width, height):
     HEIGHT = height
     # print("geometry is now:", HEIGHT, WIDTH)
 
+
 def clear():
     global WIDTH
     global HEIGHT
 
-
     canvas.place_forget()
     canvas.place(x=0, y=0, width=WIDTH, height=HEIGHT)
-
 
     # print("geometry is now:", HEIGHT, WIDTH)
 
 
-
-
 def background(color):
     color = mIntToColor(color)
-    canvas.configure(bg=color )
+    canvas.configure(bg=color)
 
 
 def sleep(seconds):
-    time.sleep(seconds)
+    for i in range(seconds/0.1):
+        time.sleep(seconds/0.1)
+        update()
 
 
 def title(title):
@@ -56,7 +56,6 @@ def translate(x, y):
 
 
 def Text(x, y, text, font=("Arial", 20), fill="black"):
-
     fill = mIntToColor(fill)
 
     try:
@@ -66,16 +65,22 @@ def Text(x, y, text, font=("Arial", 20), fill="black"):
         exit()
 
 
+def Image(x, y, imagepath):
+    photo = PhotoImage(file=imagepath)
+    canvas.create_image(x, y, image=photo)
+
+
 def dObject(number):
     try:
         return canvas.delete(number)
     except TclError:
         exit()
 
+
 def noWindow():
     global root
     global nowin
-    nowin=1
+    nowin = 1
     root.destroy()
 
 
@@ -97,7 +102,7 @@ def Circle(x, y, dx, dy, fill=None):
     try:
 
         fill = mIntToColor(fill)
-        #print(fill)
+        # print(fill)
         if fill == "#NoneNoneNone":
             num = canvas.create_oval(null[0] + x, null[1] + y, null[0] + dx, null[1] + dy)
         else:
@@ -113,9 +118,9 @@ def Point(x, y, fill=None):
     try:
 
         fill = mIntToColor(fill)
-        #print(fill)
+        # print(fill)
         if fill == "#NoneNoneNone":
-            num = canvas.create_oval(null[0] + x, null[1] + y, null[0] + x, null[1] + y,)
+            num = canvas.create_oval(null[0] + x, null[1] + y, null[0] + x, null[1] + y, )
         else:
             num = canvas.create_oval(null[0] + x, null[1] + y, null[0] + x, null[1] + y, fill=fill)
 
@@ -123,8 +128,6 @@ def Point(x, y, fill=None):
 
     except TclError:
         exit()
-
-
 
 
 def Line(x, y, dx, dy, fill=None):
@@ -135,13 +138,13 @@ def Line(x, y, dx, dy, fill=None):
     except TclError:
         exit()
 
-def Rectangle(x,y, dx, dy):
-    #cLine(x, y, dx, y)
-    #cLine(x, y, x, dy)
-    #cLine(dx, y, dx, dy)
-    #cLine(x, dy, dx, dy)
-    return canvas.create_rectangle(null[0] + x, null[1] + y, null[0] + dx, null[1] + dy)
 
+def Rectangle(x, y, dx, dy):
+    # cLine(x, y, dx, y)
+    # cLine(x, y, x, dy)
+    # cLine(dx, y, dx, dy)
+    # cLine(x, dy, dx, dy)
+    return canvas.create_rectangle(null[0] + x, null[1] + y, null[0] + dx, null[1] + dy)
 
 
 def windowdestroyd():
@@ -191,8 +194,8 @@ try:
             except TclError:
                 # print("TCL error")
                 break
-            #for element in elements:
-                #dObject(element)
-                #print(len(elements))
+            # for element in elements:
+            # dObject(element)
+            # print(len(elements))
 except AttributeError:
     print("No draw")
