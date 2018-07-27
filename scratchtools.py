@@ -116,6 +116,25 @@ def Circle(x, y, dx, dy, fill=None):
         exit()
 
 
+def Triangle(x, y, dx, dy, ddx, ddy, fill=None):
+    try:
+
+        fill = mIntToColor(fill)
+        # print(fill)
+        if fill == "#NoneNoneNone":
+            num = canvas.create_polygon(null[0] + x, null[1] + y, null[0] + dx, null[1] + dy, null[0] + ddx,
+                                        null[1] + ddy, fill=fill)
+        else:
+            num = canvas.create_polygon(null[0] + x, null[1] + y, null[0] + dx, null[1] + dy, null[0] + ddx,
+                                        null[1] + ddy)
+
+
+        return num
+
+    except TclError:
+        exit()
+
+
 def Point(x, y, fill=None):
     try:
 
@@ -165,15 +184,14 @@ def randomchoice(list):
     return random.choice(list)
 
 
-def map(fst, snd, trd, fth):
-    return None
+def map(scl1=(1, 10), scl2=(1, 20), wert=5):
+    return wert * (scl2[1] - scl2[0]) / (scl1[1] - scl1[0])
     # TODO: End this function
 
 
 """Rest"""
 
 import random
-import time
 import my_sketch
 
 null = [0, 0]
