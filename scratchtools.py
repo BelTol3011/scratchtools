@@ -36,9 +36,13 @@ def background(color):
 
 
 def sleep(seconds):
-    for i in range(seconds/0.1):
-        time.sleep(seconds/0.1)
+    for i in range(int(seconds/0.5)):
+        time.sleep(seconds/0.5)
         update()
+
+
+def randomColor():
+    return "#" + str(randomint(10, 99)) + str(randomint(10, 99)) + str(randomint(10, 99))
 
 
 def title(title):
