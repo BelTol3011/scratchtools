@@ -36,9 +36,7 @@ def background(color):
 
 
 def sleep(seconds):
-    for i in range(int(seconds/0.5)):
-        time.sleep(seconds/0.5)
-        update()
+    sleep(seconds)
 
 
 def randomColor():
