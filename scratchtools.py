@@ -36,7 +36,7 @@ def background(color):
 
 
 def sleep(seconds):
-    sleep(seconds)
+     time.sleep(seconds)
 
 
 def randomColor():
@@ -193,6 +193,7 @@ def map(scl1=(1, 10), scl2=(1, 20), wert=5):
 
 import random
 import my_sketch
+import time
 
 null = [0, 0]
 
