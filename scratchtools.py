@@ -123,15 +123,15 @@ def Triangle(x, y, dx, dy, ddx, ddy, fill=None):
         # print(fill)
         if fill == "#NoneNoneNone":
             num = canvas.create_polygon(null[0] + x, null[1] + y, null[0] + dx, null[1] + dy, null[0] + ddx,
-                                        null[1] + ddy, fill=fill)
+                                        null[1] + ddy, fill=None)
         else:
             num = canvas.create_polygon(null[0] + x, null[1] + y, null[0] + dx, null[1] + dy, null[0] + ddx,
-                                        null[1] + ddy)
+                                        null[1] + ddy, fill=fill)
 
 
         return num
 
-    except TclError:
+    except NameError:
         exit()
 
 
